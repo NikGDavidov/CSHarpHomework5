@@ -21,13 +21,14 @@ int [] GetArray(int length)
 	    Console.WriteLine();
 	}
 
-	int [] array = GetArray(12);
+	int [] array = GetArray(5);
 	PrintArray(array);
     int length = array.Length;
-    int iMax = array.Length/2;
+    int iMax = array.Length/2 + length%2;
 	int [] newArray = new int [iMax];
 	for (int i=0; i<iMax; i++)
     {
 	newArray[i]=array[i]*array[length-1-i];
 	}
+	if (length%2 > 0) newArray[iMax-1] =(int)Math.Sqrt(newArray[iMax-1]);
 	PrintArray(newArray);
